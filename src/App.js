@@ -17,13 +17,14 @@ import FirstComponent from './components/FirstComponent';
 import MainComp from './components/MainComp';
 import Master from './components/Master';
 import Home from './components/crud/Home';
+import Reducer from './components/Reducer';
 
 function App() {
   return (
     <div className='App'>
       <h1>React Demo</h1>
       <div> 
-        <Home />
+        <Reducer />
       </div>
       
     </div>
