@@ -35,6 +35,8 @@ function Reducer(props) {
               placeholder='Enter text'
               onChange={(e)=>dispatch({type:ACTIONS.INPUTCHANGE, payload:e.target.value})}
               /><br/><br/>
+
+              
               <p>{state.inputVal}</p>
               <p>{state.counter}</p>
               <button 

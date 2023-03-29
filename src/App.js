@@ -16,18 +16,29 @@ import RouteDemo from './components/RouteDemo';
 import FirstComponent from './components/FirstComponent';
 import MainComp from './components/MainComp';
 import Master from './components/Master';
-import Home from './components/crud/Home';
 import Reducer from './components/Reducer';
+import Home from './redux/Home';
+import counterReducer from './redux/counterReducer';
+import {configureStore} from '@reduxjs/toolkit'
+import { Provider } from 'react-redux';
+import myLogger from './redux/myLogger';
+import capAtTen from './redux/capAtTen';
+import colorReducer from './redux/colorReducer';
+import { rootReducer } from './redux/rootReducer';
+import { composeWithDevTools } from 'redux-devtools-extension';
+
+const reduxDevTools = composeWithDevTools();
 
 function App() {
+  console.log('CREATING STORE....')
+  const store = configureStore({reducer:rootReducer, 
+                                middleware:[myLogger, capAtTen], 
+                                devTools:reduxDevTools})
   return (
-    <div className='App'>
-      <h1>React Demo</h1>
-      <div> 
-        <Reducer />
-      </div>
-      
-    </div>
+    <Provider store={store}>
+         <Home />
+    </Provider>
+    
   );
 }
 
