@@ -26,18 +26,21 @@ import capAtTen from './redux/capAtTen';
 import colorReducer from './redux/colorReducer';
 import { rootReducer } from './redux/rootReducer';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import Counter from './components/Counter';
+import thunk from 'redux-thunk';
 
 const reduxDevTools = composeWithDevTools();
 
 function App() {
   console.log('CREATING STORE....')
   const store = configureStore({reducer:rootReducer, 
-                                middleware:[myLogger, capAtTen], 
+                                middleware:[myLogger, capAtTen, thunk], 
                                 devTools:reduxDevTools})
   return (
     <Provider store={store}>
          <Home />
     </Provider>
+    
     
   );
 }

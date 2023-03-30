@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { increment, decrement } from './actions';
 import { useDispatch } from 'react-redux';
+import { getData } from './actions';
 
 function Home(props) {
     console.log('State is getting accessed..')
@@ -28,7 +29,9 @@ function Home(props) {
                 name="color" 
                 value="Green"
                 onClick={(e)=>dispatch({type:'CHANGECOLOR', payload:e.target.value})}/>GREEN&nbsp;        
-            <p>My favorite color is: {state.favColor.color}</p>    
+            <p>My favorite color is: {state.favColor.color}</p>
+            <hr/>
+            <button onClick={()=>dispatch(getData())}>Get Data</button>    
                 
                 
         </div>
