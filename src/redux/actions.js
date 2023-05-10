@@ -15,8 +15,8 @@ export const decrement = ()=>{
 
 export const getData = ()=>{
     return async(dispatch)=>{
-        const response = await axios.get("https://jsonplaceholder.typicode.com/posts");
-        //console.log(response.data)
+        const response = await axios.get("http://13.233.64.79:8181/api/products");
+        console.log(response.data)
         dispatch({
             type: "FETCH_DATA",
             payload: response.data
