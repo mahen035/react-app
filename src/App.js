@@ -17,7 +17,7 @@ import FirstComponent from './components/FirstComponent';
 import MainComp from './components/MainComp';
 import Master from './components/Master';
 import Reducer from './components/Reducer';
-import Home from './components/crud/Home';
+import Home from './redux/Home';
 import counterReducer from './redux/counterReducer';
 import {configureStore} from '@reduxjs/toolkit'
 import { Provider } from 'react-redux';
